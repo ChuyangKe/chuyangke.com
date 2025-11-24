@@ -103,7 +103,7 @@ class MessageQueue {
 
 A well-designed system is easier to understand with visual aids. Here's a typical load-balanced architecture:
 
-![System Architecture Diagram](/images/system-architecture.svg)
+![System Architecture Diagram](/images/template/system-architecture.svg)
 
 This diagram shows how client requests (in gray) flow through a load balancer (highlighted in red) and get distributed across multiple backend servers. The red accent color draws attention to the critical component—the load balancer that ensures fault tolerance and horizontal scalability.
 
@@ -111,7 +111,7 @@ This diagram shows how client requests (in gray) flow through a load balancer (h
 
 When choosing algorithms, understanding their time complexity is crucial:
 
-![Algorithm Complexity Comparison](/images/complexity-chart.svg)
+![Algorithm Complexity Comparison](/images/template/complexity-chart.svg)
 
 Notice how O(n²) algorithms (in red) quickly become impractical as input size grows, while O(log n) algorithms remain efficient even at scale.
 
@@ -119,7 +119,7 @@ Notice how O(n²) algorithms (in red) quickly become impractical as input size g
 
 For distributed systems, consensus protocols are fundamental. Here's how a Paxos-inspired protocol works:
 
-![Consensus Protocol Flow](/images/consensus-flow.svg)
+![Consensus Protocol Flow](/images/template/consensus-flow.svg)
 
 The protocol ensures that all nodes agree on the same value, even in the presence of failures. The proposer (highlighted in red) coordinates the four-phase process to achieve consensus.
 
