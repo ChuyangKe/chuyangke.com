@@ -31,6 +31,11 @@ const posts = (await getCollection('blog', ({ data }) => {
                             })}
                         </time>
                     </div>
+                    {post.data.description && (
+                        <p class="text-sm text-gray-600 dark:text-gray-400 mt-2 mb-3 leading-relaxed">
+                            {post.data.description}
+                        </p>
+                    )}
                     {post.data.tags.length > 0 && (
                         <div class="flex gap-2 text-xs font-mono text-gray-500 dark:text-gray-500">
                             {post.data.tags.map(tag => (
