@@ -1,0 +1,95 @@
+---
+import ThemeToggle from '../components/ThemeToggle.astro';
+
+interface Props {
+	title: string;
+    description?: string;
+}
+
+const { title, description = "A developer's log." } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content={description} />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+        <!-- KaTeX CSS for Math Rendering -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI+WdtXRGWt2kTvGFasHpSy3SV" crossorigin="anonymous">
+
+        <!-- Flash Prevention Script - Apply theme before page renders -->
+        <script is:inline>
+            (function() {
+                const theme = localStorage.getItem('theme') ||
+                    (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+                if (theme === 'dark') {
+                    document.documentElement.classList.add('dark');
+                }
+            })();
+        </script>
+
+		<title>{title}</title>
+	</head>
+	<body class="min-h-screen flex flex-col items-center bg-[#fffff8] dark:bg-[#111] text-gray-900 dark:text-[#cdd6f4] font-serif transition-colors duration-300 selection:bg-yellow-200 dark:selection:bg-gray-700">
+        <!-- Theme Toggle -->
+        <ThemeToggle />
+
+        <!-- Minimal Header -->
+        <header class="w-full max-w-2xl px-6 py-12 flex justify-between items-baseline border-b border-gray-200 dark:border-gray-800">
+            <h1 class="font-mono text-xl font-bold tracking-tighter">
+                <span class="text-gray-400 dark:text-gray-600">~/</span><span class="text-gray-900 dark:text-gray-100">ck_lab</span>
+            </h1>
+            <nav class="space-x-6 text-sm text-gray-600 dark:text-gray-400">
+                <a href="/" class="hover:text-accent dark:hover:text-accent hover:underline underline-offset-4 transition-colors">Home</a>
+                <a href="/about" class="hover:text-accent dark:hover:text-accent hover:underline underline-offset-4 transition-colors">About</a>
+            </nav>
+        </header>
+
+        <!-- Main Content Area -->
+        <main class="w-full max-w-2xl px-6 py-12 flex-1">
+            <slot />
+        </main>
+
+        <!-- Minimal Footer -->
+        <footer class="w-full max-w-2xl px-6 py-8 mt-auto border-t border-gray-200 dark:border-gray-800 font-mono text-xs text-gray-400 dark:text-gray-500 flex justify-between">
+            <span>&copy; {new Date().getFullYear()} Chuyang Ke</span>
+            <div class="space-x-2">
+                <a href="https://x.com/ChuyangKe" class="hover:text-accent dark:hover:text-accent hover:underline underline-offset-2 decoration-1 transition-colors">Twitter</a>
+                <a href="https://www.linkedin.com/in/chuyang-ke/" class="hover:text-accent dark:hover:text-accent hover:underline underline-offset-2 decoration-1 transition-colors">LinkedIn</a>
+                <a href="https://github.com/ChuyangKe" class="hover:text-accent dark:hover:text-accent hover:underline underline-offset-2 decoration-1 transition-colors">GitHub</a>
+            </div>
+        </footer>
+	</body>
+</html>
+
+<style is:global>
+    body {
+        -webkit-font-smoothing: antialiased;
+        font-feature-settings: "kern", "liga", "clig", "calt";
+    }
+
+    /* Minimal scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: #ddd; }
+    ::-webkit-scrollbar-thumb:hover { background: #bbb; }
+
+    /* Dark mode scrollbar */
+    .dark ::-webkit-scrollbar-thumb { background: #444; }
+    .dark ::-webkit-scrollbar-thumb:hover { background: #555; }
+
+    /* LaTeX overflow fix */
+    .katex-display {
+        overflow-x: auto;
+        overflow-y: hidden;
+        padding: 0.5rem 0;
+    }
+</style>

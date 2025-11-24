@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 500">
+  <!-- Background -->
+  <rect width="700" height="500" fill="#ffffff"/>
+
+  <!-- Title -->
+  <text x="350" y="30" text-anchor="middle" font-family="Lora, serif" font-size="18" fill="#1a1a1a" font-weight="600">Consensus Protocol Flow</text>
+
+  <!-- Phase 1: Prepare -->
+  <g id="phase1">
+    <rect x="50" y="70" width="150" height="70" fill="#f5f5f5" stroke="#1a1a1a" stroke-width="2" rx="4"/>
+    <text x="125" y="95" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="12" fill="#1a1a1a" font-weight="bold">Phase 1: Prepare</text>
+    <text x="125" y="115" text-anchor="middle" font-family="Lora, serif" font-size="11" fill="#666666">Proposer sends</text>
+    <text x="125" y="130" text-anchor="middle" font-family="Lora, serif" font-size="11" fill="#666666">prepare(n) request</text>
+  </g>
+
+  <!-- Arrow down -->
+  <path d="M 125 140 L 125 180" stroke="#d00000" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+
+  <!-- Phase 2: Promise -->
+  <g id="phase2">
+    <rect x="50" y="180" width="150" height="70" fill="#ffe5e5" stroke="#d00000" stroke-width="2" rx="4"/>
+    <text x="125" y="205" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="12" fill="#1a1a1a" font-weight="bold">Phase 2: Promise</text>
+    <text x="125" y="225" text-anchor="middle" font-family="Lora, serif" font-size="11" fill="#666666">Acceptors respond</text>
+    <text x="125" y="240" text-anchor="middle" font-family="Lora, serif" font-size="11" fill="#666666">with promise(n)</text>
+  </g>
+
+  <!-- Arrow down -->
+  <path d="M 125 250 L 125 290" stroke="#d00000" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+
+  <!-- Phase 3: Accept -->
+  <g id="phase3">
+    <rect x="50" y="290" width="150" height="70" fill="#f5f5f5" stroke="#1a1a1a" stroke-width="2" rx="4"/>
+    <text x="125" y="315" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="12" fill="#1a1a1a" font-weight="bold">Phase 3: Accept</text>
+    <text x="125" y="335" text-anchor="middle" font-family="Lora, serif" font-size="11" fill="#666666">Proposer sends</text>
+    <text x="125" y="350" text-anchor="middle" font-family="Lora, serif" font-size="11" fill="#666666">accept(n, v) request</text>
+  </g>
+
+  <!-- Arrow down -->
+  <path d="M 125 360 L 125 400" stroke="#d00000" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+
+  <!-- Phase 4: Accepted -->
+  <g id="phase4">
+    <rect x="50" y="400" width="150" height="70" fill="#ffe5e5" stroke="#d00000" stroke-width="2" rx="4"/>
+    <text x="125" y="425" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="12" fill="#1a1a1a" font-weight="bold">Phase 4: Accepted</text>
+    <text x="125" y="445" text-anchor="middle" font-family="Lora, serif" font-size="11" fill="#666666">Quorum reached</text>
+    <text x="125" y="460" text-anchor="middle" font-family="Lora, serif" font-size="11" fill="#666666">Consensus achieved ✓</text>
+  </g>
+
+  <!-- Right side: Nodes visualization -->
+  <g id="nodes">
+    <text x="450" y="90" text-anchor="middle" font-family="Lora, serif" font-size="14" fill="#666666" font-style="italic">Distributed Nodes</text>
+
+    <!-- Node 1 -->
+    <circle cx="400" cy="150" r="30" fill="#f5f5f5" stroke="#1a1a1a" stroke-width="2"/>
+    <text x="400" y="157" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="13" fill="#1a1a1a">N1</text>
+
+    <!-- Node 2 (Proposer) -->
+    <circle cx="500" cy="150" r="30" fill="#ffe5e5" stroke="#d00000" stroke-width="3"/>
+    <text x="500" y="157" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="13" fill="#1a1a1a" font-weight="bold">N2</text>
+    <text x="500" y="200" text-anchor="middle" font-family="Lora, serif" font-size="10" fill="#d00000" font-style="italic">Proposer</text>
+
+    <!-- Node 3 -->
+    <circle cx="600" cy="150" r="30" fill="#f5f5f5" stroke="#1a1a1a" stroke-width="2"/>
+    <text x="600" y="157" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="13" fill="#1a1a1a">N3</text>
+
+    <!-- Node 4 -->
+    <circle cx="450" cy="250" r="30" fill="#f5f5f5" stroke="#1a1a1a" stroke-width="2"/>
+    <text x="450" y="257" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="13" fill="#1a1a1a">N4</text>
+
+    <!-- Node 5 -->
+    <circle cx="550" cy="250" r="30" fill="#f5f5f5" stroke="#1a1a1a" stroke-width="2"/>
+    <text x="550" y="257" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="13" fill="#1a1a1a">N5</text>
+
+    <!-- Communication lines -->
+    <line x1="500" y1="180" x2="400" y2="120" stroke="#d00000" stroke-width="1" stroke-dasharray="3,3" opacity="0.5"/>
+    <line x1="500" y1="180" x2="600" y2="120" stroke="#d00000" stroke-width="1" stroke-dasharray="3,3" opacity="0.5"/>
+    <line x1="500" y1="180" x2="450" y2="220" stroke="#d00000" stroke-width="1" stroke-dasharray="3,3" opacity="0.5"/>
+    <line x1="500" y1="180" x2="550" y2="220" stroke="#d00000" stroke-width="1" stroke-dasharray="3,3" opacity="0.5"/>
+  </g>
+
+  <!-- Info box -->
+  <rect x="350" y="320" width="320" height="130" fill="#f9f9f9" stroke="#e5e5e5" stroke-width="1" rx="4"/>
+  <text x="510" y="345" text-anchor="middle" font-family="Lora, serif" font-size="13" fill="#1a1a1a" font-weight="600">Key Properties</text>
+  <text x="370" y="370" font-family="Lora, serif" font-size="11" fill="#666666">• Safety: Never decide on different values</text>
+  <text x="370" y="390" font-family="Lora, serif" font-size="11" fill="#666666">• Liveness: Eventually decide (with assumptions)</text>
+  <text x="370" y="410" font-family="Lora, serif" font-size="11" fill="#666666">• Quorum: Majority of nodes must agree</text>
+  <text x="370" y="430" font-family="Lora, serif" font-size="11" fill="#666666">• Fault Tolerance: Tolerates f &lt; n/2 failures</text>
+
+  <!-- Arrow marker definition -->
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#d00000"/>
+    </marker>
+  </defs>
+</svg>
