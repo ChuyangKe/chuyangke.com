@@ -3,6 +3,7 @@ title: 'Minecraft Data Collection Env'
 description: 'I built a Minecraft data collection environment from scratch for world model training. This post documents the setup: game environment, RCON, and the design decisions behind it.'
 pubDate: '2026-04-18'
 tags: ['data', 'agent']
+draft: true
 ---
 
 ## Background
