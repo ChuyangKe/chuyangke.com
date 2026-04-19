@@ -15,7 +15,7 @@ const posts = (await getCollection('blog', ({ data }) => {
 			posts.map((post) => (
 				<article class="group">
                     <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between mb-1">
-                        <a href={`/posts/${post.slug}/`}>
+                        <a href={`/posts/${post.id}/`}>
                             <h2 class="font-serif text-xl font-medium text-gray-900 dark:text-gray-100 hover:underline hover:text-accent dark:hover:text-accent cursor-pointer transition-colors duration-200 decoration-1 underline-offset-2">
                                 {post.data.title}
                             </h2>
