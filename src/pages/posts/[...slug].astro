@@ -136,8 +136,17 @@ const { Content } = await post.render();
 
     :global(.dark .prose pre) {
         background-color: #0d0d0d !important;
-        color: #e5e7eb !important;
         border-color: #374151;
+    }
+
+    /* Activate Shiki dark theme CSS variables in dark mode */
+    :global(.dark .astro-code),
+    :global(.dark .astro-code span) {
+        color: var(--shiki-dark) !important;
+        background-color: var(--shiki-dark-bg) !important;
+        font-style: var(--shiki-dark-font-style) !important;
+        font-weight: var(--shiki-dark-font-weight) !important;
+        text-decoration: var(--shiki-dark-text-decoration) !important;
     }
 
     :global(.prose pre code) {
