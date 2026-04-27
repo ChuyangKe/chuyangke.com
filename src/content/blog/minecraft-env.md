@@ -74,3 +74,5 @@ I created a standard [Gymnasium](https://gymnasium.farama.org/) environment for 
 ```
 
 On startup, the agent waits for the warmup phase to finish so the capture pipeline is stable. Then it enters a loop: read the latest observation, compute or sample an action, log the action, send it to the virtual controller, and repeat. Because the agent communicates through the hub and the virtual controller rather than through Minecraft-specific interfaces, the orchestrator can swap in any agent that satisfies this interface: a random agent for collecting exploration data, a trained RL policy, or an LLM/VLM that calls an API.
+
+![A Simple RL Agent](/images/minecraft-env/recording.gif)
